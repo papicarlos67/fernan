@@ -1,0 +1,277 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'plus jakarta sans' sans-serif;
+    background-color: #090d18;
+    color: #f8fafc;
+    line-height: 1.5;
+}
+#modulo-eventos{
+    min-height: 100vh;
+}
+.layout-app{
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-template-rows: 70px 1fr auto;
+    grid-template-areas: "header header" "aside main" "footer footer";
+}
+.header-app{
+    grid-area: header;
+    background-color: #111827;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+    border-bottom: 1px solid #1f2937;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.brand-logo{
+    font-weight: 800;
+    font-size: 1.25rem;
+}
+.color-focus{color: #6366f1;}
+.buscador-interactivo{
+    display: flex;
+    gap: 8px ;
+    width: 38%;
+}
+.input-app{
+    width: 100%;
+    padding: 8px 14px;
+    background-color: #090d16;
+    border: 1px solid #373151;
+    border-radius: 6px;
+    color: white;
+    transition: all 0.3s ease;
+}
+.input-app:focus{
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
+}
+.btn.app{
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2 ease;
+}
+.btn-accion-secundaria{
+    background-color: #374151;
+    color: white;
+
+}
+.tbn-ticket{
+    background-color: #4f46e5;
+    color: white;
+}
+.btn-app:hover{
+    filter: brightness(1.15) ;
+}
+.btn-app:active{
+    transform: scale(0.95);
+}
+.nav-usuario{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.nav-link{
+    color: #9ca3af;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2 ease;
+}
+.nav-link:hover, .nav-link.activo{color: #818cfc;}
+.badge-notif{
+    background-color: #f43f5e;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 50%;
+    font-size: 0.75rem;
+}
+/*damos estilo estilo al panel lateral*/
+.panel-lateral{
+    grid-area: aside;
+    background-color: #090d16;
+    border-right: 2px solid #1f2937;
+    padding: 25px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.heading-aside{
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: #6b7280;
+    margin-bottom: 10px;
+}
+.lista-filtros{
+    list-style: none;
+}
+.fitro-item{
+    color: #9ca3ad;
+    text-decoration: none;
+    display: block;
+    padding: 8px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+.filtro-item:hover, .filtro-item.activo{
+    background-color: #111827;
+    color: #818cf8;
+    transform: translateX(4px);
+}
+.select-app{
+    width: 100%;
+    padding: 8px;
+    background-color: #111827;
+    color: white;
+    border: 2px solid #374151;
+    border-radius: 6px;
+
+}
+/*zona principal*/
+.zona-catalogo{
+    grid-area: main;
+    padding: 30px;
+    overflow-y: auto;
+}
+.hero-eventos{
+    background: linear-gradient(135deg, #4338ca 0%, #090d16 100%);
+    padding: 35px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+.pill-destacado{
+    background-color: #f59e0b;
+    color: #000000;
+    font-weight: 800;
+    font-size: 0.7rem;
+    padding: 3px 8px;
+    border-radius: 4px;
+}
+.hero-titulo{
+    font-size: 1.8rem;
+    margin: 10px 0;
+
+}
+.grid-eventos{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+    gap: 20px;
+}
+/*configuramos las tarjetas*/
+.card-evento{
+    background-color: #111827;
+    border-radius: 10px;
+    border: 2px solid #1f2937;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+.card-evento:hover{
+    transform: translateY(-6px);
+    border-color: #6366f1;
+    box-shadow: 0 10px 20px rgba(99,  102, 241, 0.2);
+}
+.card-media{
+    height: 140px;
+    padding: 12px;
+    display: flex;
+    justify-content: flex-end;
+}
+.bg-concierto{
+    background: linear-gradient(45deg, #be185d, #f43f5e);
+}
+.bg-esports{
+    background: linear-gradient(45deg, #1d4ed8, #3b82f6);
+}
+.bg-comedia{
+    background: linear-gradient(45deg, #b45309, #f59e0b);
+}
+.bg-dj{
+    background: linear-gradient(45deg, #cb21a8, #a855f7);
+}
+.card-body{
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.card-categoria{
+    color: #818cf8;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+.card-titulo{
+    font-size: 1rem;
+    margin: 4px 0;
+}
+.card-lugar{
+    color: #9ca3af;
+    font-size: 0.8rem;
+    margin-bottom: 15px;
+}
+.card-footer{
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    border-top: 2px solid #1f2937;
+}
+.precio-actual{
+    font-weight: 800;
+    font-size: 1.1rem;
+}
+.precio-antes{
+    font-size: 0.75rem;
+    color: #6b7280;
+    text-decoration: line-through;
+}
+.btn-comprar{
+    background-color: #6366f1;
+    color: white;
+}
+.footer.app{
+    grid-area: footer;
+    padding: 20px;
+    text-align: center;
+    border-top: 2px solid #1f2937;
+    color: #6b7280;
+    font-size: 0.85rem;
+}
+
+/* FASE 7: MEDIA QUERIES (ADAPTABILIDAD RESPONSIVA) */
+
+@media (max-width: 900px) {
+    .layout-app {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "main"
+            "footer";
+    }
+
+    .panel-lateral { display: none; }
+    .buscador-interactivo { width: 50%; }
+}
+
+@media (max-width: 600px) {
+    .header-app {
+        flex-direction: column;
+        height: auto;
+        padding: 15px;
+        gap: 12px;
+    }
+    .buscador-interactivo { width: 100%; }
+    .grid-eventos { grid-template-columns: 1fr; }
+}

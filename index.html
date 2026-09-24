@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apex Events - Boletos & Conciertos</title>
+  
+  <!-- Importación de Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Fase 1: Vinculación de Hoja de Estilos Externa -->
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+  <!-- CONTENEDOR MAESTRO (CSS Grid Global) -->
+  <div class="layout-app" id="modulo-eventos">
+
+    <!-- 1. ENCABEZADO Y NAVEGACIÓN (Flexbox + Position Sticky) -->
+    <header class="header-app">
+      <div class="brand-logo">
+        <span class="ico-brand">🎟️</span> APEX<span class="color-focus">EVENTS</span>
+      </div>
+
+      <div class="buscador-interactivo">
+        <input type="text" class="input-app" placeholder="Buscar artistas, festivales...">
+        <button class="btn-app btn-accion-secundaria">Explorar</button>
+      </div>
+
+      <nav class="nav-usuario">
+        <a href="#" class="nav-link activo">Inicio</a>
+        <a href="#" class="nav-link">Calendario</a>
+        <button class="btn-app btn-ticket">
+          Mi Ticket <span class="badge-notif">2</span>
+        </button>
+      </nav>
+    </header>
+
+    <!-- 2. BARRA LATERAL DE FILTROS (Flexbox Vertical) -->
+    <aside class="panel-lateral">
+      <h3 class="heading-aside">Ciudades</h3>
+      <ul class="lista-filtros">
+        <li><a href="#" class="filtro-item activo">Todas las ciudades</a></li>
+        <li><a href="#" class="filtro-item">La Paz</a></li>
+        <li><a href="#" class="filtro-item">Santa Cruz</a></li>
+        <li><a href="#" class="filtro-item">Cochabamba</a></li>
+      </ul>
+
+      <div class="grupo-orden">
+        <h3 class="heading-aside">Tipo de Evento</h3>
+        <select class="select-app">
+          <option value="todos">Todos los tipos</option>
+          <option value="musica">Conciertos & En Vivo</option>
+          <option value="gaming">Torneos E-Sports</option>
+          <option value="teatro">Teatro & Stand Up</option>
+        </select>
+      </div>
+    </aside>
+
+    <!-- 3. CONTENIDO PRINCIPAL (Banner + Grid de Eventos) -->
+    <main class="zona-catalogo">
+      
+      <!-- Hero Banner -->
+      <section class="hero-eventos">
+        <div class="hero-content">
+          <span class="pill-destacado">DESTACADO DEL MES</span>
+          <h2 class="hero-titulo">Festival SoundWave 2026</h2>
+          <p class="hero-desc">3 días de música en vivo, más de 20 artistas internacionales e instalaciones de luces.</p>
+
+          <div class="hero-actions">
+            <a href="#" class="btn-app btn-hero">Comprar Entradas</a>
+            <span class="hero-fecha">📅 15-17 de Noviembre</span>
+          </div>
+        </div>
+      </section>
+
+      <h2 class="seccion-titulo">Próximos Eventos</h2>
+
+      <!-- Rejilla Bidimensional (CSS Grid) -->
+      <div class="grid-eventos">
+
+        <!-- Tarjeta 1 -->
+        <article class="card-evento">
+          <div class="card-media bg-concierto">
+            <span class="badge-tag">ÚLTIMOS CUPOS</span>
+          </div>
+          <div class="card-body">
+            <span class="card-categoria">Concierto</span>
+            <h4 class="card-titulo">Rock Arena Tour 2026</h4>
+            <p class="card-lugar">📍 Estadio Hernando Siles, La Paz</p>
+            <footer class="card-footer">
+              <div class="card-precio">
+                <span class="precio-actual">180 Bs</span>
+                <span class="precio-antes">220 Bs</span>
+              </div>
+              <button class="btn-app btn-comprar">Reservar</button>
+            </footer>
+          </div>
+        </article>
+
+        <!-- Tarjeta 2 -->
+        <article class="card-evento">
+          <div class="card-media bg-esports">
+            <span class="badge-tag bg-exclusivo">FASE FINAL</span>
+          </div>
+          <div class="card-body">
+            <span class="card-categoria">E-Sports</span>
+            <h4 class="card-titulo">Valorant Masters Bolivia</h4>
+            <p class="card-lugar">📍 Feicobol, Cochabamba</p>
+            <footer class="card-footer">
+              <div class="card-precio">
+                <span class="precio-actual">75 Bs</span>
+              </div>
+              <button class="btn-app btn-comprar">Reservar</button>
+            </footer>
+          </div>
+        </article>
+
+        <!-- Tarjeta 3 -->
+        <article class="card-evento">
+          <div class="card-media bg-comedia">
+            <span class="badge-tag">MÁS VENDIDO</span>
+          </div>
+          <div class="card-body">
+            <span class="card-categoria">Stand Up</span>
+            <h4 class="card-titulo">Noche de Comedia Unplugged</h4>
+            <p class="card-lugar">📍 Sonilum Arena, Santa Cruz</p>
+            <footer class="card-footer">
+              <div class="card-precio">
+                <span class="precio-actual">120 Bs</span>
+                <span class="precio-antes">150 Bs</span>
+              </div>
+              <button class="btn-app btn-comprar">Reservar</button>
+            </footer>
+          </div>
+        </article>
+
+        <!-- Tarjeta 4 -->
+        <article class="card-evento">
+          <div class="card-media bg-dj">
+            <span class="badge-tag bg-exclusivo">PREVENTA</span>
+          </div>
+          <div class="card-body">
+            <span class="card-categoria">Electrónica</span>
+            <h4 class="card-titulo">Electronic Night Beats</h4>
+            <p class="card-lugar">📍 Campo Ferial, La Paz</p>
+            <footer class="card-footer">
+              <div class="card-precio">
+                <span class="precio-actual">200 Bs</span>
+              </div>
+              <button class="btn-app btn-comprar">Reservar</button>
+            </footer>
+          </div>
+        </article>
+
+      </div>
+    </main>
+
+    <!-- 4. PIE DE PÁGINA -->
+    <footer class="footer-app">
+      <p>&copy; 2026 Apex Events Inc. Todos los derechos reservados.</p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
